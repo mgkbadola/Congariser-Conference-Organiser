@@ -1,0 +1,82 @@
+* {box-sizing: border-box}
+html{
+    background-color: #222;
+    font-family: "Leelawadee UI", sans-serif;
+    color: white;
+}
+.logo{
+    width: 10%;
+    height: 10%;
+    display: block;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divInputContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divInputContainer > input {
+    width: 30%;
+    margin : 2%;
+    padding : 1%;
+}
+
+table {
+    margin: auto;
+    background-color: #111111;
+    border-radius: 10px;
+}
+.conflink {
+    color: white;
+}
+th {
+    background-color: #B3404A;
+    text-align: left;
+    padding:10px;
+}
+td {
+    padding: 10px;
+}
+
+
+#divMainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+input[type=submit], #buttonFormAddConference{
+    text-decoration: none;
+    padding: 10px;
+    background: #B3404A;
+    border-radius: 20px;
+    color: white;
+    border: none;
+}
+
+#paperf{
+    caret-color: #B3404A;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #444;
+    color: white;
+}
+
+.divChildHalfSpace {
+    flex-basis: 50%;
+    padding: 30px;
+}
+
+.divMainContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+p {
+    padding: 10px;
+}

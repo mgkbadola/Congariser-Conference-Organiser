@@ -1,0 +1,23 @@
+{%extends "upper_menu.html" %}
+{% block head %}
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static '/css/style_signup_login_form.css' %}">
+{% endblock %}
+{% block content %}
+    <p style="margin: 0 auto; width: 50%; text-align: center">{{ message }}</p>
+    <div class="divFormContainer">
+        <div class="divLoginSignup">
+            <form action="login_handle" method="post">
+            {% csrf_token %}
+                <input type="text" placeholder="Enter your e-mail address" name="email" autocomplete="off" required>
+                 <br>
+                <input type="password" placeholder="Enter your password" name="password" required>
+                 <br>
+
+                <input type="submit" value="Log In!">
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/conference.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Congariser</title>
+    {% block head %}
+    {% endblock %}
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static '/css/style_upper_menu.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style_general.css' %}">
+
+</head>
+<body style="margin: 0 0 0 0">
+    <div id="divMenuContainer">
+        <a href="/">Home</a>
+        <a href="conferences">Conferences</a>
+        {% if islogged_in == False %}
+        <a href="login">Log In</a>
+        {% endif %}
+        {% if islogged_in == True %}
+        <a href="logout">Log Out</a>
+        {% endif %}
+        {% if is_admin_logged_in %}
+            <a href="chair_reviewer_application">Applications</a>
+            {%  elif user_type == "ba78a4b507e20f7d159503078770b0b1e3865e8ab6a9a85ab49a5486" %}
+            <a href="author_papers">Your Papers</a>
+            {%  elif user_type == "4f0373fb264a3a25bc997596ab16e6de0dbfca018ebefca11e9f1492" %}
+            <a href="reviewer_assignments">Your Review Assignments</a>
+            {% else %}
+            <a href="sign_up" {% if islogged_in == True %}
+            style="visibility: hidden;"
+        {% endif %}>Sign Up</a>
+        {% endif %}
+    </div>
+{% block content %}
+{% endblock %}
+</body>
+</html>
